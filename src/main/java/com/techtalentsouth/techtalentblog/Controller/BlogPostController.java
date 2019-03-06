@@ -38,7 +38,8 @@ public class BlogPostController {
     }
 
     @GetMapping(value = "/blog_posts/new")
-    public String newBlog (BlogPost blogPost) {
+    public String newBlog (Model model) {
+        model.addAttribute("blogPost", new BlogPost());
         return "blogpost/new";
     }
 
